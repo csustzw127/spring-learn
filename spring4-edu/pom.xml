@@ -54,6 +54,16 @@
         <!-- 继承父pom文件的pluginmanagement的版本与配置-->
         <plugins>
             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- enable hot deployment -->
+                <!-- 修改代码之后只需要Build一下无须重新Run即可看到修改后的效果 -->
+                <!-- 也可以修改为修改代码后自动Build，但是不推荐这样做，影响性能 -->
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
             </plugin>
             <plugin>
